@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">My Application</string>
+    <string name="auth_title"><u>Авторизация</u></string>
 </resources>

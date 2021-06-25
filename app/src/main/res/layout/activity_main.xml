@@ -2,12 +2,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    tools:context=".MainActivity"
-
-    >
+    tools:context=".MainActivity">
 
 
     <TextView
@@ -16,12 +14,10 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="128dp"
-        android:layout_weight="1"
         android:fontFamily="@font/roboto"
-        android:text="Авторизация"
+        android:text="@string/auth_title"
         android:textColor="#000000"
         android:textSize="20dp"
-
         />
 
     <TextView
@@ -30,7 +26,6 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="42dp"
-        android:layout_weight="1"
         android:fontFamily="@font/roboto"
         android:text="Укажите свой телефонный номер,\nчтобы сделать заказ"
         android:textColor="#000000"
@@ -41,18 +36,17 @@
 
     <EditText
         android:id="@+id/editTextPhone2"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="57dp"
-        android:layout_weight="1"
+        android:background="@drawable/edit_text_style"
         android:ems="10"
-
         android:inputType="phone" />
 
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
@@ -61,13 +55,14 @@
             android:layout_width="220dp"
             android:layout_height="48dp"
             android:layout_marginLeft="70dp"
-            android:layout_marginTop="259dp"
-            android:layout_weight="1"
+            android:layout_marginTop="50dp"
+            android:elevation="10dp"
             android:fontFamily="@font/roboto_medium"
             android:inputType="phone"
             android:text="НAЧАТЬ"
             android:textColor="#000000"
             android:textSize="14dp"
+            android:translationZ="10dp"
             app:backgroundTint="#27E8AB" />
 
         <TextView
@@ -75,7 +70,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="145dp"
-            android:layout_weight="1"
+            android:layout_marginTop="10dp"
             android:fontFamily="@font/work_sans"
             android:text="Пропустить"
             android:textColor="#DE6758"
@@ -84,15 +79,13 @@
 
     <TextView
         android:id="@+id/textView6"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="27dp"
         android:layout_marginTop="46dp"
-        android:layout_weight="1"
         android:fontFamily="@font/work_sans"
         android:text="Авторизуясь, я соглашаюсь с условиями использования"
         android:textColor="#000000"
-        android:textSize="12dp"
+        android:textSize="12sp"
 
         />
 
