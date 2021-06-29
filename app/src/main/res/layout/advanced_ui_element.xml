@@ -14,7 +14,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
             android:layout_marginTop="16dp"
             android:text="online"
             android:textColor="#262633"
@@ -23,10 +22,12 @@
 
         <TextView
             android:id="@+id/tvTitleSecondPart"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
             android:text="SWIFTBOOK"
             android:textColor="#262633"
+            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@+id/tvTitleFirstPart"
             app:layout_constraintTop_toBottomOf="@+id/tvTitleFirstPart" />
 
@@ -36,9 +37,13 @@
             android:layout_height="wrap_content"
             android:src="@drawable/shape_cicrcle"
             app:layout_constraintStart_toEndOf="@id/tvTitleSecondPart"
-            app:layout_constraintTop_toTopOf="@id/tvTitleFirstPart" />
+            app:layout_constraintTop_toTopOf="@id/tvTitleFirstPart"
+            app:layout_constraintBottom_toBottomOf="@id/tvTitleFirstPart"
+
+            />
 
         <ImageView
+            android:id="@+id/ivCloseBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
@@ -48,7 +53,7 @@
             app:layout_constraintTop_toTopOf="@id/tvTitleFirstPart" />
 
         <TextView
-            android:id="@+id/tvSecondTitle"
+            android:id="@+id/tvMainTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -61,66 +66,73 @@
             app:layout_constraintTop_toBottomOf="@id/tvTitleSecondPart" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/clFirsCourse"
+            android:id="@+id/clFirsDish"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            app:layout_constraintTop_toBottomOf="@id/tvSecondTitle"
-            tools:layout_editor_absoluteX="8dp">
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/decoration_background_filled_rounded_16"
+            android:elevation="6dp"
+            android:translationZ="4dp"
+            app:layout_constraintTop_toBottomOf="@id/tvMainTitle">
 
             <ImageView
-                android:id="@+id/ivFoodPhoto"
+                android:id="@+id/ivFirstDishPhoto"
                 android:layout_width="64dp"
                 android:layout_height="64dp"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
                 android:src="@drawable/tom_iam"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/tvFoodName"
-                android:layout_width="0dp"
+                android:id="@+id/tvFirstDishName"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:layout_marginEnd="16dp"
                 android:fontFamily="@font/roboto"
                 android:text="Том Ям суп с морепродуктами"
                 android:textColor="#000000"
-                android:textSize="16sp"
-                app:layout_constraintBottom_toTopOf="@+id/tvCount"
-                app:layout_constraintEnd_toStartOf="@id/ivFirstClose"
-                app:layout_constraintStart_toEndOf="@id/ivFoodPhoto"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_chainStyle="spread" />
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@id/tvFirstDishCount"
+                app:layout_constraintStart_toEndOf="@id/ivFirstDishPhoto"
+                app:layout_constraintTop_toTopOf="@id/ivFirstDishPhoto"/>
 
             <TextView
-                android:id="@+id/tvCount"
+                android:id="@+id/tvFirstDishCount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto"
                 android:textColor="#000000"
                 android:textSize="13sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="@id/tvFoodName"
-                app:layout_constraintTop_toBottomOf="@+id/tvFoodName"
+                android:layout_marginStart="8dp"
+                app:layout_constraintBottom_toBottomOf="@id/ivFirstDishPhoto"
+                app:layout_constraintStart_toEndOf="@id/ivFirstDishPhoto"
+                app:layout_constraintTop_toBottomOf="@id/tvFirstDishName"
+                app:layout_constraintVertical_chainStyle="spread"
                 tools:text="Кол-во: 2 шт" />
 
             <TextView
+                android:id="@+id/tvFirstDishPrice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@color/black"
+                android:background="@drawable/decoration_background_filled_rounded_8"
                 android:fontFamily="@font/roboto"
                 android:text="450₽"
                 android:textColor="#FFFFFF"
                 android:textSize="12sp"
-                app:layout_constraintBaseline_toBaselineOf="@+id/tvCount"
-                app:layout_constraintEnd_toEndOf="@id/tvFoodName" />
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/tvFirstDishCount"
+                app:layout_constraintEnd_toStartOf="@id/ivFirstDishCloseBtn" />
 
             <ImageView
-                android:id="@+id/ivFirstClose"
+                android:id="@+id/ivFirstDishCloseBtn"
                 android:layout_width="14dp"
                 android:layout_height="14dp"
                 android:layout_marginEnd="16dp"
@@ -132,11 +144,14 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/clSecondCourse"
+            android:id="@+id/clSecondDish"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            app:layout_constraintTop_toBottomOf="@id/clFirsCourse">
+            android:background="@drawable/decoration_background_filled_rounded_16"
+            android:elevation="6dp"
+            android:translationZ="4dp"
+            app:layout_constraintTop_toBottomOf="@id/clFirsDish">
 
             <ImageView
                 android:id="@+id/ivSecondFoodPhoto"
@@ -207,11 +222,14 @@ Part De Luxe"
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/clThirdCourse"
+            android:id="@+id/clThirdDish"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            app:layout_constraintTop_toBottomOf="@+id/clSecondCourse">
+            android:background="@drawable/decoration_background_filled_rounded_16"
+            android:elevation="6dp"
+            android:translationZ="4dp"
+            app:layout_constraintTop_toBottomOf="@+id/clSecondDish">
 
             <ImageView
                 android:id="@+id/ivThirdFoodPhoto"
@@ -282,7 +300,7 @@ Part De Luxe"
             android:layout_marginStart="16dp"
             android:layout_marginTop="48dp"
             android:layout_marginEnd="16dp"
-            app:layout_constraintTop_toBottomOf="@id/clThirdCourse">
+            app:layout_constraintTop_toBottomOf="@id/clThirdDish">
 
             <TextView
                 android:id="@+id/tvThirdTitle"
@@ -348,29 +366,7 @@ Part De Luxe"
                 android:textColor="#000000"
                 android:fontFamily="@font/roboto"/>
 
-            <Switch
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintTop_toTopOf="@id/clFourthCourse"
-                android:drawableBottom="@id/clFourthCourse"
-                app:layout_constraintEnd_toEndOf="@id/clFourthCourse"
-                app:layout_goneMarginStart="286dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginTop="14dp"
-                />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-
-            >
-
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
 </ScrollView>
