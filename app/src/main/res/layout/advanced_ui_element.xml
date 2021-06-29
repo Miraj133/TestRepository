@@ -320,6 +320,7 @@ Part De Luxe"
                 app:layout_constraintTop_toBottomOf="@+id/edFirsText" />
 
             <TextView
+                android:id="@+id/tvFourthTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="48dp"
@@ -328,10 +329,46 @@ Part De Luxe"
                 android:textColor="#000000"
                 android:textSize="20dp"
                 app:layout_constraintStart_toStartOf="@id/ivBand"
-                app:layout_constraintTop_toBottomOf="@id/ivBand"></TextView>
+                app:layout_constraintTop_toBottomOf="@id/ivBand" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clFourthCourse"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/tvFourthTitle"/>
+
+            <TextView
+                android:id="@+id/tvFifthTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@id/clFourthCourse"
+                app:layout_constraintStart_toStartOf="@id/clFourthCourse"
+                android:layout_marginTop="12.73dp"
+                android:text="Самовывоз"
+                android:textColor="#000000"
+                android:fontFamily="@font/roboto"/>
+
+            <Switch
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@id/clFourthCourse"
+                android:drawableBottom="@id/clFourthCourse"
+                app:layout_constraintEnd_toEndOf="@id/clFourthCourse"
+                app:layout_goneMarginStart="286dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="14dp"
+                />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
 
+            >
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
