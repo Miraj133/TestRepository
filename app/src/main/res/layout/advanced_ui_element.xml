@@ -308,122 +308,119 @@ Part De Luxe"
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-            <TextView
-                android:id="@+id/tvComments"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto"
-                android:text="Комментарий"
-                android:textColor="#000000"
-                android:textSize="20sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/clThirdDish"
-                android:layout_marginTop="48dp"
-                android:layout_marginStart="16dp"/>
+        <TextView
+            android:id="@+id/tvComments"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="48dp"
+            android:fontFamily="@font/roboto"
+            android:text="Комментарий"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/clThirdDish" />
 
-            <EditText
-                android:id="@+id/etFirsText"
+        <EditText
+            android:id="@+id/etFirsText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/shape_rounding"
+            android:fontFamily="@font/roboto"
+            android:gravity="top"
+            android:hint="Укажите дополнительную информацию\nк заказу"
+            android:minLines="10"
+            android:padding="8dp"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/tvComments"
+            app:layout_constraintTop_toBottomOf="@+id/tvComments" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="#000000"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etFirsText" />
+
+        <TextView
+            android:id="@+id/tvAdditionalTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="48dp"
+            android:fontFamily="@font/roboto"
+            android:text="Дополнительно"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etFirsText" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/swPickUpService"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="36dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/roboto"
+            android:text="Самовывоз"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvAdditionalTitle" />
+
+        <RadioGroup
+            android:id="@+id/rgPaymentMethods"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/swPickUpService">
+
+            <RadioButton
+                android:id="@+id/rbByCardOn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
-                android:background="@drawable/shape_rounding"
                 android:fontFamily="@font/roboto"
-                android:gravity="top"
-                android:hint="Укажите дополнительную информацию\nк заказу"
-                android:padding="8dp"
-                android:textSize="14sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@id/tvComments"
-                app:layout_constraintTop_toBottomOf="@+id/tvComments" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_marginEnd="16dp"
-                android:layout_marginStart="16dp"
-                android:layout_height="1dp"
-                android:background="#000000"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/etFirsText" />
-
-            <TextView
-                android:id="@+id/tvFourthTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="48dp"
-                android:layout_marginStart="16dp"
-                android:fontFamily="@font/roboto"
-                android:text="Дополнительно"
-                android:textColor="#000000"
-                android:textSize="20sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/etFirsText" />
-
-            <androidx.appcompat.widget.SwitchCompat
-                android:id="@+id/swPickUpService"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="36dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginStart="16dp"
-                android:fontFamily="@font/roboto"
-                android:text="Самовывоз"
+                android:layoutDirection="rtl"
+                android:text="Оплата картой"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvFourthTitle" />
+                app:layout_constraintTop_toBottomOf="@id/swPickUpService" />
 
-            <RadioGroup
-                android:id="@+id/rgPaymentMethods"
+            <RadioButton
+                android:id="@+id/rbByCash"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@id/swPickUpService">
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/roboto"
+                android:layoutDirection="rtl"
+                android:text="Оплата наличными"
+                android:textSize="16sp" />
+        </RadioGroup>
 
-                <RadioButton
-                    android:id="@+id/rbByCardOn"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginEnd="16dp"
-                    android:fontFamily="@font/roboto"
-                    android:layoutDirection="rtl"
-                    android:text="Оплата картой"
-                    android:textSize="16sp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/swPickUpService" />
-
-                <RadioButton
-                    android:id="@+id/rbByCardOff"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginEnd="16dp"
-                    android:fontFamily="@font/roboto"
-                    android:layoutDirection="rtl"
-                    android:text="Оплата наличными"
-                    android:textSize="16sp" />
-            </RadioGroup>
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/apbToOrder"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="70dp"
-                android:layout_marginTop="48dp"
-                android:layout_marginEnd="70dp"
-                android:layout_marginBottom="24sp"
-                android:background="#27E8AB"
-                android:fontFamily="@font/roboto_medium"
-                android:text="ЗАКАЗАТЬ"
-                android:textSize="14sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/rgPaymentMethods"
-
-                ></androidx.appcompat.widget.AppCompatButton>
-
-
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnGetOrder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="70dp"
+            android:layout_marginTop="48dp"
+            android:layout_marginEnd="70dp"
+            android:layout_marginBottom="24dp"
+            android:background="#27E8AB"
+            android:fontFamily="@font/roboto_medium"
+            android:text="ЗАКАЗАТЬ"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rgPaymentMethods" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
