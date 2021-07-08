@@ -9,16 +9,15 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.advanced_ui_element)
 
-        val maxNumber = 10
-        val x = (Math.random() * maxNumber).toInt()
-        val squareArea = x * x
-        val circleArea = Math.PI * x * x
-        Log.d("lesson14", "площадь квадрата равна $squareArea")
-        Log.d("lesson14", "площадь окружности равна $circleArea")
+        val cat: Animal = Cat("barsik", 7)
+        cat.voice()
 
-        if (squareArea < circleArea)
-            Log.d("lesson14", "площадь квадрата со стороной $x меньше площади окружности радиуса $x")
-        else
-            Log.d("lesson14", "площадь квадрата со стороной $x больше площади окружности радиуса $x")
+        val dog: Animal = Dog("zahar", 2)
+        dog.voice()
+
+        var animal: Animal = Cat("murka", 12)
+        (animal as? Cat)?.scratch()
+        animal = Dog("markiz", 4)
+        (animal as? Dog)?.bite()
     }
 }
