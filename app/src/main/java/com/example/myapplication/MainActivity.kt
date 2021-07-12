@@ -19,5 +19,25 @@ class MainActivity : AppCompatActivity() {
         (animal as? Cat)?.scratch()
         animal = Dog("markiz", 4)
         (animal as? Dog)?.bite()
+
+        val names = arrayOf<String>("katya", "tanya", "yana", "olya", "bella", "maks", "tolya", "vova", "zahar", "kolya")
+        val ages = intArrayOf(20, 26, 49, 45, 19, 21, 42, 22, 38, 10)
+
+        val random = (10..15).random()
+        val persons : MutableList<Person> = mutableListOf()
+        repeat(random) {
+            persons.add(Person(names.random(), ages.random()))
+        }
+
+
+        persons.forEach {
+            Log.d("less", "onCreate: ${it.name} ${it.age}")
+        }
+        val find = ages.find { it == 26 }
+        Log.d("less", "$find")
+        var filter = ages.filter { it in 26..39 }
+        Log.d("less", "onCreate: $filter")
+
+
     }
 }
