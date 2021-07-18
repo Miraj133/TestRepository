@@ -31,12 +31,21 @@ class MainActivity : AppCompatActivity() {
 
 
         persons.forEach {
-            Log.d("less", "onCreate: ${it.name} ${it.age}")
+            Log.d("lesson14", "cгенерированная персона: ${it.name} ${it.age}")
         }
-        val find = ages.find { it == 26 }
-        Log.d("less", "$find")
-        var filter = ages.filter { it in 26..39 }
-        Log.d("less", "onCreate: $filter")
+
+        persons.filter { it.age in 26..39 }.forEach {
+            Log.d("lesson154", "фильтованная персона: ${it.name} ${it.age}")
+        }
+
+
+        val somePerson = persons.find { it.age ==22 }
+        somePerson?.let {
+            Log.d("lesson14", "найденная персона: ${it.name} ${it.age}")
+        }?:Log.d("lesson14", "No one found")
+
+
+
 
 
     }
