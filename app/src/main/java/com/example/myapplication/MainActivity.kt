@@ -1,6 +1,5 @@
 package com.example.myapplication
 
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
@@ -15,10 +14,7 @@ class MainActivity : AppCompatActivity() {
         val btnStart = findViewById<Button>(R.id.btnStart)
         btnStart.setOnClickListener {
             Log.d("lesson15", "btnStart clicked")
-            val myIntent = Intent (this,
-                SecondActivity::class.java)
-            myIntent.putExtra("phone","number")
-            startActivity(myIntent)
+            SecondActivity.newInstance(activity = this, etPhone = etPhone.text)
         }
 
         val cat: Animal = Cat("barsik", 7)
@@ -53,7 +49,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         persons.forEach {
-            Log.d("lesson14", "cгенерированная персона: ${it.name} ${it.age}")
+            Log.d("lesson14", "сгенерированная персона: ${it.name} ${it.age}")
         }
 
         persons.filter { it.age in 26..39 }.forEach {
