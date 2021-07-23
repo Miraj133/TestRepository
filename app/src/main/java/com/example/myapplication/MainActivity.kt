@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
         val btnStart = findViewById<Button>(R.id.btnStart)
         btnStart.setOnClickListener {
             Log.d("lesson15", "btnStart clicked")
-            SecondActivity.newInstance(activity = this, etPhone = etPhone.text)
+            OrderActivity.newInstance(activity = this, etPhone = etPhone.text)
         }
 
         val cat: Animal = Cat("barsik", 7)
