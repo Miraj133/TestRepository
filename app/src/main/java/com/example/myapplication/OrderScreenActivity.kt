@@ -13,13 +13,13 @@ class OrderScreenActivity : AppCompatActivity() {
     companion object {
         private const val PHONE_KEY = "phone"
         fun newInstance(activity: Activity, etPhone: Editable) {
-
-            val myIntent = Intent(activity,OrderScreenActivity::class.java).apply {
+            val myIntent = Intent(activity, OrderScreenActivity::class.java).apply {
                 putExtra(PHONE_KEY, etPhone.toString())
             }
             activity.startActivity(myIntent)
         }
     }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.advanced_ui_element)
