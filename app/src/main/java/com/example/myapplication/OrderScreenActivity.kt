@@ -7,14 +7,14 @@ import android.text.Editable
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 
-class SecondActivity : AppCompatActivity() {
+class OrderScreenActivity : AppCompatActivity() {
 
 
     companion object {
         private const val PHONE_KEY = "phone"
         fun newInstance(activity: Activity, etPhone: Editable) {
 
-            val myIntent = Intent(activity,SecondActivity::class.java).apply {
+            val myIntent = Intent(activity,OrderScreenActivity::class.java).apply {
                 putExtra(PHONE_KEY, etPhone.toString())
             }
             activity.startActivity(myIntent)
