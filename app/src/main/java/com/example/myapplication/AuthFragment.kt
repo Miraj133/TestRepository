@@ -8,40 +8,33 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.LinearLayout
+import androidx.core.os.bundleOf
 import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
+import com.example.myapplication.OrderFragment.Companion.PHONE_KEY
+import com.example.myapplication.databinding.ActivityAuthBinding
 
 class AuthFragment : Fragment() {
 
-    companion object{
+    companion object {
 
     }
 
-
+    private lateinit var binding: ActivityAuthBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.activity_auth,container,false)
+        binding = ActivityAuthBinding.inflate(inflater, container,false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val btnStart = view.findViewById<Button>(R.id.btnStart)
-        btnStart.setOnClickListener{
-          // (activity as MainActivity).openOrderFragment(etPhone.text.toString())
-
-        }
-
-        btnStart.setOnClickListener {
-            parentFragmentManager
-                    .beginTransaction()
-                    .add(R.id.clRoot,OrderFragment())
-                    .commit()
+        binding.btnStart.setOnClickListener {
+            (activity as? MainNavigation)?.openOrderFragment(binding.etPhone.text.toString())
         }
     }
-
-
 }

@@ -11,13 +11,14 @@ import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
+import com.example.myapplication.databinding.OrderActivityBinding
 
 class OrderFragment : Fragment() {
 
 
     companion object {
-        private const val PHONE_KEY = "phone"
-        fun newInstance(etPhone: Editable): OrderFragment {
+         const val PHONE_KEY = "phone"
+        fun newInstance(etPhone: String): OrderFragment {
             return OrderFragment().apply {
                 arguments = bundleOf(
                     PHONE_KEY to etPhone.toString()
@@ -26,21 +27,24 @@ class OrderFragment : Fragment() {
         }
     }
 
+    private lateinit var binding: OrderActivityBinding
+
+    var phone: String?=null
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.order_activity,container,false)
+        binding = OrderActivityBinding.inflate(inflater,container,false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val etPhone = view.findViewById<EditText>(R.id.etPhone)
-        val etFirsText = view.findViewById<EditText>(R.id.etFirsText)
-        //etFirsText.setText(arguments.text.getString("PHONE_KEY"))
-        etPhone.text = "fd $etPhone"
+        phone = arguments?.getString(PHONE_KEY)
+        binding.etFirsText.setText("$phone")
     }
 
 }
