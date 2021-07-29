@@ -17,14 +17,15 @@ class OrderFragment : Fragment() {
 
     companion object {
         private const val PHONE_KEY = "phone"
-        fun newInstance(etPhone: String): OrderFragment {
+        fun newInstance(etPhone: Editable): OrderFragment {
             return OrderFragment().apply {
                 arguments = bundleOf(
-                    PHONE_KEY to etPhone
+                    PHONE_KEY to etPhone.toString()
                 )
             }
         }
     }
+    var etPhone:String?=null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -32,6 +33,17 @@ class OrderFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(R.layout.order_activity,container,false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val etPhone = view.findViewById<EditText>(R.id.etPhone)
+        val etFirsText = view.findViewById<EditText>(R.id.etFirsText)
+        etFirsText.setText("$etPhone")
+    //etPhone.text= "PhoneNumber: $etPhone"
+
+
+
     }
 
 //    override fun onCreate(savedInstanceState: Bundle?) {

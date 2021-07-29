@@ -8,10 +8,14 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.LinearLayout
+import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
 
 class AuthFragment : Fragment() {
 
+    companion object{
+
+    }
 
 
 
@@ -27,11 +31,17 @@ class AuthFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val etPhone = view.findViewById<EditText>(R.id.etPhone)
         val btnStart = view.findViewById<Button>(R.id.btnStart)
+        btnStart.setOnClickListener{
+
+        }
+
+
+
         btnStart.setOnClickListener {
             parentFragmentManager
-                .beginTransaction()
-                .add(R.id.clRoot,OrderFragment())
-                .commit()
+                    .beginTransaction()
+                    .add(R.id.clRoot,OrderFragment())
+                    .commit()
         }
     }
 
