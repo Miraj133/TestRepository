@@ -29,13 +29,11 @@ class AuthFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val etPhone = view.findViewById<EditText>(R.id.etPhone)
         val btnStart = view.findViewById<Button>(R.id.btnStart)
         btnStart.setOnClickListener{
+          // (activity as MainActivity).openOrderFragment(etPhone.text.toString())
 
         }
-
-
 
         btnStart.setOnClickListener {
             parentFragmentManager

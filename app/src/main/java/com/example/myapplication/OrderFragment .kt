@@ -25,7 +25,7 @@ class OrderFragment : Fragment() {
             }
         }
     }
-    var etPhone:String?=null
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -39,18 +39,8 @@ class OrderFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val etPhone = view.findViewById<EditText>(R.id.etPhone)
         val etFirsText = view.findViewById<EditText>(R.id.etFirsText)
-        etFirsText.setText("$etPhone")
-    //etPhone.text= "PhoneNumber: $etPhone"
-
-
-
+        //etFirsText.setText(arguments.text.getString("PHONE_KEY"))
+        etPhone.text = "fd $etPhone"
     }
 
-//    override fun onCreate(savedInstanceState: Bundle?) {
-//        super.onCreate(savedInstanceState)
-//        setContentView(R.layout.order_activity)
-//        val etFirsText = findViewById<EditText>(R.id.etFirsText)
-//        val etPhone = findViewById<EditText>(R.id.etPhone)
-//        etFirsText.setText(intent.getStringExtra("phone"))
-//    }
 }

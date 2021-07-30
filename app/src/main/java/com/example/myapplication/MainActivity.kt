@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
             .add(R.id.clRoot, AuthFragment())
             .commit()
     }
-    private fun openOrderFragment(etPhone:Editable){
+    fun openOrderFragment(etPhone:Editable){
         supportFragmentManager
             .beginTransaction()
             .add(R.id.clRoot,OrderFragment.newInstance(etPhone = etPhone))
