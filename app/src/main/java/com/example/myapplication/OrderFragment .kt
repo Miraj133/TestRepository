@@ -45,6 +45,16 @@ class OrderFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         phone = arguments?.getString(PHONE_KEY)
         binding.etFirsText.setText("$phone")
+        binding.clFirsDish.setOnClickListener{
+            (activity as? MainNavigation)?.openDish()
+        }
+        binding.clSecondDish.setOnClickListener {
+            (activity as? MainNavigation)?.openDish()
+        }
+        binding.clThirdDish.setOnClickListener {
+            (activity as? MainNavigation)?.openDish()
+        }
     }
+
 
 }

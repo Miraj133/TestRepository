@@ -11,6 +11,13 @@ class MainActivity : AppCompatActivity(), MainNavigation {
         openAuthFragment()
     }
 
+
+
+
+    override fun openDish() {
+        Dish().show(supportFragmentManager,"Dish")
+    }
+
     override fun openAuthFragment() {
         supportFragmentManager
             .beginTransaction()
