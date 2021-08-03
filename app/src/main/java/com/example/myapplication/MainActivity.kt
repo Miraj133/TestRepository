@@ -1,7 +1,6 @@
 package com.example.myapplication
 
 import android.os.Bundle
-import android.text.Editable
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity(), MainNavigation {
@@ -15,7 +14,7 @@ class MainActivity : AppCompatActivity(), MainNavigation {
 
 
     override fun openDish() {
-        Dish().show(supportFragmentManager,"Dish")
+        DishDialog().show(supportFragmentManager,"Dish")
     }
 
     override fun openAuthFragment() {

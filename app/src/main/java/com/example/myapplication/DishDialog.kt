@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
-class Dish: BottomSheetDialogFragment() {
+class DishDialog: BottomSheetDialogFragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater,
