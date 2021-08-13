@@ -9,10 +9,6 @@ class MainActivity : AppCompatActivity(), MainNavigation {
         setContentView(R.layout.activity_main)
         openAuthFragment()
     }
-
-
-
-
     override fun openDish() {
         DishDialog().show(supportFragmentManager,"Dish")
     }
