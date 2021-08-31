@@ -9,6 +9,6 @@ class Swipes: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_swipes)
-        val vpSwipesMenu = findViewById<ViewPager2>(R.id.vpSwipesMenu)
+        val vpMain = findViewById<ViewPager2>(R.id.vpMain)
     }
 }
