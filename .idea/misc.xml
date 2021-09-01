@@ -7,6 +7,9 @@
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2421875" />
         <entry key="app/src/main/res/layout/activity_swipes.xml" value="0.22604166666666667" />
         <entry key="app/src/main/res/layout/dish_dialog.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_all.xml" value="0.35572916666666665" />
+        <entry key="app/src/main/res/layout/fragment_desserts.xml" value="0.35572916666666665" />
+        <entry key="app/src/main/res/layout/fragment_fast_food.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/order_activity.xml" value="0.23072916666666668" />
       </map>
     </option>

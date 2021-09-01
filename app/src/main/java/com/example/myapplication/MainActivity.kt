@@ -21,7 +21,6 @@ class MainActivity : AppCompatActivity(), MainNavigation {
             .commit()
     }
 
-
     override fun openOrderFragment(etPhone: String) {
         supportFragmentManager
             .beginTransaction()
