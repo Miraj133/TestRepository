@@ -37,8 +37,10 @@ class AuthFragment : Fragment() {
         binding.btnStart.setOnClickListener {
             (activity as? MainNavigation)?.openOrderFragment(binding.etPhone.text.toString())
         }
+
         binding.tvSkip.setOnClickListener {
-           val startIntent =
+            (activity as? MainNavigation)?.openMenuCategoriesFragment()
         }
+
     }
 }

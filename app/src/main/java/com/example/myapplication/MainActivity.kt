@@ -1,9 +1,7 @@
 package com.example.myapplication
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.viewpager2.widget.ViewPager2
 
 class MainActivity : AppCompatActivity(), MainNavigation {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,6 +27,15 @@ class MainActivity : AppCompatActivity(), MainNavigation {
             .add(R.id.clRoot, OrderFragment.newInstance(etPhone = etPhone))
             .addToBackStack("OrderFragment")
             .commit()
+    }
+
+    override fun openMenuCategoriesFragment() {
+        supportFragmentManager
+            .beginTransaction()
+            .add(R.id.clRoot, MenuCategoriesFragment())
+            .addToBackStack("MenuCategoriesFragment")
+            .commit()
+
     }
 
 

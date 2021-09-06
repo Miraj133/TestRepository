@@ -1,11 +1,9 @@
 package com.example.myapplication
 
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.adapter.FragmentStateAdapter
 
-class ViewPagerAdapter(activity: AppCompatActivity): FragmentStateAdapter(activity){
+class ViewPagerAdapter(activity: MenuCategoriesFragment): FragmentStateAdapter(activity){
     private val fragments: MutableList<Fragment> = mutableListOf()
 
     fun addFragment(fragment: Fragment){
