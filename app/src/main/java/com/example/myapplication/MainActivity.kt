@@ -1,5 +1,6 @@
 package com.example.myapplication
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager2.widget.ViewPager2
@@ -9,6 +10,7 @@ class MainActivity : AppCompatActivity(), MainNavigation {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         openAuthFragment()
+
     }
     override fun openDish() {
         DishDialog().show(supportFragmentManager,"Dish")
@@ -28,4 +30,6 @@ class MainActivity : AppCompatActivity(), MainNavigation {
             .addToBackStack("OrderFragment")
             .commit()
     }
+
+
 }

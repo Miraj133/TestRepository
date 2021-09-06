@@ -1,5 +1,6 @@
 package com.example.myapplication
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -35,6 +36,9 @@ class AuthFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.btnStart.setOnClickListener {
             (activity as? MainNavigation)?.openOrderFragment(binding.etPhone.text.toString())
+        }
+        binding.tvSkip.setOnClickListener {
+           val startIntent =
         }
     }
 }
