@@ -59,6 +59,7 @@
             android:elevation="10dp"
             android:fontFamily="@font/roboto_medium"
             android:inputType="phone"
+            style="@style/FoodCategoryRegister"
             android:paddingStart="80dp"
             android:paddingTop="16dp"
             android:paddingEnd="80dp"

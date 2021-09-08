@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name=""
+
+   <style name="FoodCategoryRegister">
+       <item name="textAllCaps">false</item>
+       <item name="color">#FF0000</item>
+   </style>
 </resources>
