@@ -3,10 +3,10 @@ package com.example.myapplication
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
 
-class ViewPagerAdapter(activity: MenuCategoriesFragment): FragmentStateAdapter(activity){
+class ViewPagerAdapter(fragment: MenuCategoriesFragment) : FragmentStateAdapter(fragment) {
     private val fragments: MutableList<Fragment> = mutableListOf()
 
-    fun addFragment(fragment: Fragment){
+    fun addFragment(fragment: Fragment) {
         fragments.add(fragment)
     }
 
@@ -15,6 +15,6 @@ class ViewPagerAdapter(activity: MenuCategoriesFragment): FragmentStateAdapter(a
     }
 
     override fun createFragment(position: Int): Fragment {
-       return fragments[position] //возвращаетстся тот или иной фрагмент
+        return fragments[position] //возвращаетстся тот или иной фрагмент
     }
 }
