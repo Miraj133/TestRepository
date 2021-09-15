@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.myapplication.databinding.MenuCategoriesFragmentBinding
-import com.google.android.material.tabs.TabLayoutMediator
+
 
 class MenuCategoriesFragment : Fragment() {
 
@@ -25,7 +25,7 @@ class MenuCategoriesFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         configureViewPager()
-        generatedPagesListAndConnectWithViewPager()
+
 
     }
 
@@ -37,14 +37,6 @@ class MenuCategoriesFragment : Fragment() {
         }
         binding.vpMain.isUserInputEnabled = false
     }
-
-    private fun generatedPagesListAndConnectWithViewPager() {
-        val tabNames = listOf("Всё", "Фаст - фуд", "Десерты")
-        TabLayoutMediator(binding.tbMain, binding.vpMain) { tab, position ->
-            tab.text = tabNames[position]
-        }.attach()
-    }
-
 
 
 }
