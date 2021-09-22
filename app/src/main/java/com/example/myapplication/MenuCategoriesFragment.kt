@@ -1,6 +1,7 @@
 package com.example.myapplication
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -26,7 +27,6 @@ class MenuCategoriesFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         configureViewPager()
 
-
     }
 
     private fun configureViewPager() {
@@ -35,7 +35,18 @@ class MenuCategoriesFragment : Fragment() {
             addFragment(FastFoodFragment())
             addFragment(DessertsFragment())
         }
-        binding.vpMain.isUserInputEnabled = false
+        binding.bnvMain.setOnNavigationItemReselectedListener {
+            when (it.itemId){
+                R.id.menu -> {
+                    binding.vpMain.currentItem=0
+                }
+
+                R.id.favorite -> {
+                    binding.vpMain.currentItem=0
+                }
+            }
+
+        }
     }
 
 
