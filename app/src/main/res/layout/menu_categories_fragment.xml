@@ -1,25 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tbMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget" />
 
     <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/vpMain"
+        android:id="@+id/vpMenu"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-       app:layout_constraintBottom_toTopOf="@id/bnvMain"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@id/bnvMain"
+        app:layout_constraintTop_toBottomOf="@+id/tbMain"
+       />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/vpFavorite"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/bnvMain"
+        app:layout_constraintTop_toBottomOf="@+id/tbMain"
+        />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bnvMain"
         android:layout_width="match_parent"
-        app:menu="@menu/bottom_nav_menu"
-        app:itemTextColor="@color/bottom_nav_colors"
         android:layout_height="56dp"
         android:background="@color/black"
         app:itemIconTint="@color/bottom_nav_colors"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:itemTextColor="@color/bottom_nav_colors"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:menu="@menu/bottom_nav_menu" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
